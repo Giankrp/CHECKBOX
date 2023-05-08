@@ -1,3 +1,7 @@
+/*  
+ El compañero BREINER LEANDRO RUIZ BENITEZ no aporto para el proyecto
+ */
+
 package Supermercado;//aca importamos el package supermercado
 
 import java.awt.*;//aca importamos la libreria para acomodar los items de la interfaz
@@ -9,6 +13,7 @@ public class Botons extends JFrame implements ItemListener {
 
     JCheckBox manzanaCB, arrozCB, galletasCB, bebidasCB;// creamos cada una de las checkboxes
     JLabel imagenLbl;// aca creamos el label para la imagen correspondiente
+    JLabel comidaLabel;
 
     // luego creamos el espacio de imagen para cada una de las imagenes
     ImageIcon manzanaImg = new ImageIcon("manzana.jpg");
@@ -19,14 +24,17 @@ public class Botons extends JFrame implements ItemListener {
     // creamos la clase bonotes para colocar y poner el evento en cada uno de los
     // checkboxes
     public Botons() {
-        super("Selecciona una imagen");// como estamos heredando, tenemos que usar el super
+        super("Bienvenido al supermercado");// como estamos heredando, tenemos que usar el super
         setLayout(new BorderLayout());// aca implementamos el layout para acomodar bien los componentes
 
-        JPanel panelIzquierdo = new JPanel(new GridLayout(4, 1)); // y aca para repartimos el espacio en 4 filas y 1
+        JPanel panelIzquierdo = new JPanel(new GridLayout(5, 1)); // y aca para repartimos el espacio en 4 filas y 1
                                                                   // columna
         setLocation(400, 150);
 
         // ya despues agregamos cada checkbox en el panel
+        comidaLabel = new JLabel("Escoja lo que va a llevar");
+        panelIzquierdo.add(comidaLabel);
+
         manzanaCB = new JCheckBox("Manzana");
         manzanaCB.addItemListener(this);
         panelIzquierdo.add(manzanaCB);
