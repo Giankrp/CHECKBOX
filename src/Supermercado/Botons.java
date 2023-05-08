@@ -24,6 +24,7 @@ public class Botons extends JFrame implements ItemListener {
 
         JPanel panelIzquierdo = new JPanel(new GridLayout(4, 1)); // y aca para repartimos el espacio en 4 filas y 1
                                                                   // columna
+        setLocation(400, 150);
 
         // ya despues agregamos cada checkbox en el panel
         manzanaCB = new JCheckBox("Manzana");
@@ -55,26 +56,26 @@ public class Botons extends JFrame implements ItemListener {
     public void itemStateChanged(ItemEvent event) {// para el evento tenemos que pasarale como parametro ItemEvent
         // y luego evaluar cada una de las condiciones
         if (event.getSource() == manzanaCB && manzanaCB.isSelected()) {
-            Image manzana = manzanaImg.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            Image manzana = manzanaImg.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
             imagenLbl.setIcon(new ImageIcon(manzana));
         } else if (event.getSource() == arrozCB && arrozCB.isSelected()) {
-            Image arroz = arrozImg.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            Image arroz = arrozImg.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
             imagenLbl.setIcon(new ImageIcon(arroz));
         } else if (event.getSource() == galletasCB && galletasCB.isSelected()) {
-            Image galletas = galletasImg.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            Image galletas = galletasImg.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
             imagenLbl.setIcon(new ImageIcon(galletas));
         } else if (event.getSource() == bebidasCB && bebidasCB.isSelected()) {
-            Image bebidas = bebidasImg.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+            Image bebidas = bebidasImg.getImage().getScaledInstance(250, 250, Image.SCALE_SMOOTH);
             imagenLbl.setIcon(new ImageIcon(bebidas));
         } else {
             imagenLbl.setIcon(null);
         }
     }
 
-    //y por ultimo la funcion que ejecuta todo la interfaz
+    // y por ultimo la funcion que ejecuta todo la interfaz
     public static void main(String[] args) {
         Botons ventana = new Botons();
-        ventana.setSize(400, 300);
+        ventana.setSize(600, 450);
         ventana.setVisible(true);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
